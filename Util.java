@@ -32,10 +32,10 @@ public class Util {
         return oNode7.getsHash();
     }
 
-    private void populateMerkleNode(MerkleNode oNodeCenter,MerkleNode oNodeLeft, MerkleNode oNodeRight){
-        oNodeCenter.setoLeft(oNodeLeft);
-        oNodeCenter.setoRight(oNodeRight);
-        oNodeCenter.setsHash(generateHash(oNodeCenter.getoLeft().getsHash() + oNodeCenter.getoRight().getsHash() ));
+    private void populateMerkleNode(MerkleNode oNode,MerkleNode oNodeLeft, MerkleNode oNodeRight){
+        oNode.setoLeft(oNodeLeft);
+        oNode.setoRight(oNodeRight);
+        oNode.setsHash(generateHash(oNode.getoLeft().getsHash() + oNode.getoRight().getsHash() ));
     }
 
     public synchronized String generateHash(String sOriginal){
@@ -75,7 +75,7 @@ public class Util {
 
     public void sleep(int iSeconds){
         try {
-            sleep(iSeconds * 1000);
+            Thread.sleep(iSeconds * 1000);
         } catch (Exception ex) {
 
         }

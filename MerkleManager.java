@@ -1,12 +1,12 @@
 public class MerkleManager {
     public static volatile String userWord;
-    public static String expectedRoot;
-    public static String merkleRoot = null;
-    public static int strikes = 0;
+    public static String sExpectedRoot;
+    public static String sMerkleRoot = null;
+    public static int iStrikes = 0;
 
     public void Manage(){
         Util oUtil = new Util();
-        expectedRoot = oUtil.promptUser("Enter expected merkle root hash");
+        sExpectedRoot = oUtil.promptUser("Enter expected merkle root hash");
 
         // Create thread objects
         MerkleThread oMerkleThread = new MerkleThread();
@@ -15,10 +15,10 @@ public class MerkleManager {
 
         // Assign + start threads
         Thread oThread1 = new Thread(oMerkleThread);
-        Thread oThread2 = new Thread(oRogueThread);
+        //Thread oThread2 = new Thread(oRogueThread);
         Thread oThread3 = new Thread(oMonitorThread);
         oThread1.start();
-        oThread2.start();
+        //oThread2.start();
         oThread3.start();
 
         while (true){
