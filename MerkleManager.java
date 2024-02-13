@@ -15,10 +15,10 @@ public class MerkleManager {
 
         // Assign + start threads
         Thread oThread1 = new Thread(oMerkleThread);
-        //Thread oThread2 = new Thread(oRogueThread);
+        Thread oThread2 = new Thread(oRogueThread);
         Thread oThread3 = new Thread(oMonitorThread);
         oThread1.start();
-        //oThread2.start();
+        oThread2.start();
         oThread3.start();
 
         while (true){

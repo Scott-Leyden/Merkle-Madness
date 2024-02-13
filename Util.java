@@ -3,9 +3,6 @@ import java.util.ArrayList;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import javax.swing.JOptionPane;
-import java.security.SecureRandom;
-
-import static java.lang.Thread.sleep;
 
 public class Util {
     public String getMerkleRoot(ArrayList<String> sWords){
